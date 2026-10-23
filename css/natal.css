@@ -1,0 +1,529 @@
+
+/* ======================================================
+   VARIÁVEIS E CONFIGURAÇÕES GERAIS
+====================================================== */
+
+:root {
+    --verde-escuro: #173d32;
+    --verde-profundo: #102b24;
+    --verde: #245744;
+    --dourado: #d9b86c;
+    --dourado-claro: #f2dfaa;
+    --creme: #fbf7ed;
+    --branco: #ffffff;
+    --texto: #29352f;
+    --texto-suave: #657168;
+    --borda: #e8e1d2;
+    --sombra: 0 10px 30px rgba(16, 43, 36, 0.08);
+    --raio: 18px;
+    --largura: 1120px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--texto);
+    background: var(--branco);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container,
+.container-acampa,
+.container-informacoes,
+.container-sacola,
+.container-apadrinhamento {
+    width: min(100% - 40px, var(--largura));
+    margin-inline: auto;
+}
+
+.titulo-secao {
+    margin-bottom: 24px;
+    color: var(--verde-escuro);
+    font-size: clamp(1.65rem, 3vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+}
+
+
+/* ======================================================
+   CABEÇALHO E IMAGEM PRINCIPAL
+====================================================== */
+
+.secao-principal {
+    background: var(--verde-escuro);
+}
+
+.camada-escura {
+    padding: 28px 0;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(217, 184, 108, 0.08),
+            transparent 65%
+        ),
+        var(--verde-profundo);
+}
+
+.conteudo-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem-campanha {
+    width: 100%;
+    max-width: 1440px;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+
+/* ======================================================
+   APRESENTAÇÃO DA CAMPANHA
+====================================================== */
+
+.dados-acampa {
+    padding: 76px 0;
+    background: var(--creme);
+}
+
+.container-acampa {
+    max-width: 850px;
+}
+
+.conteudo-acampa {
+    padding: 0 12px;
+}
+
+.conteudo-acampa .titulo-secao {
+    margin-bottom: 28px;
+}
+
+.texto-acampa-paragrafo {
+    margin-bottom: 18px;
+    color: var(--texto);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    text-align: left;
+}
+
+.texto-acampa-paragrafo:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ======================================================
+   COMO PARTICIPAR
+====================================================== */
+
+.secao-informacoes {
+    padding: 76px 0;
+    background: var(--branco);
+}
+
+.container-informacoes {
+    max-width: 1000px;
+}
+
+.passos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 36px;
+}
+
+.passo {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 26px 22px;
+    background: var(--creme);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.passo:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+.numero-passo {
+    display: flex;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    color: var(--verde-profundo);
+    background: var(--dourado-claro);
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Mostra o número 1 mesmo que o primeiro elemento esteja vazio */
+.numero-passo:empty::before {
+    content: "1";
+}
+
+.passo h3 {
+    margin-bottom: 10px;
+    color: var(--verde-escuro);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.passo p {
+    color: var(--texto-suave);
+    font-size: 0.92rem;
+    line-height: 1.75;
+}
+
+
+/* ======================================================
+   ITENS DA SACOLINHA
+====================================================== */
+
+.secao-sacola {
+    padding: 76px 0;
+    background: var(--creme);
+}
+
+.container-sacola {
+    max-width: 1000px;
+}
+
+.texto-central {
+    max-width: 760px;
+    margin: 0 auto 28px;
+    color: var(--texto-suave);
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.itens-sacola {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin: 36px 0;
+}
+
+.item-sacola {
+    display: flex;
+    min-height: 150px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    text-align: center;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.item-sacola:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+.item-sacola span {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.item-sacola strong {
+    color: var(--verde-escuro);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.container-sacola .texto-central:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ======================================================
+   CHAMADA FINAL
+====================================================== */
+
+.secao-apadrinhamento {
+    padding: 68px 20px;
+    color: var(--branco);
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(217, 184, 108, 0.12),
+            transparent 65%
+        ),
+        var(--verde-escuro);
+    text-align: center;
+}
+
+.container-apadrinhamento h2 {
+    margin-bottom: 28px;
+    color: var(--branco);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.btn-escolher {
+    display: inline-flex;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    color: var(--verde-profundo);
+    background: var(--dourado);
+    border: 2px solid var(--dourado);
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-escolher:hover {
+    color: var(--verde-profundo);
+    background: var(--dourado-claro);
+    border-color: var(--dourado-claro);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-escolher:focus-visible {
+    outline: 3px solid var(--dourado-claro);
+    outline-offset: 5px;
+}
+
+
+/* ======================================================
+   RODAPÉ
+====================================================== */
+
+.footer-paz-kids {
+    padding: 30px 20px;
+    color: rgba(255, 255, 255, 0.8);
+    background: var(--verde-profundo);
+    text-align: center;
+}
+
+.footer-titulo {
+    margin-bottom: 10px;
+    color: var(--dourado-claro);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.footer-copyright {
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+
+/* ======================================================
+   TABLETS
+====================================================== */
+
+@media (max-width: 900px) {
+    .passos {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 650px;
+        margin-inline: auto;
+        margin-top: 30px;
+    }
+
+    .passo {
+        padding: 24px;
+    }
+
+    .dados-acampa,
+    .secao-informacoes,
+    .secao-sacola {
+        padding: 60px 0;
+    }
+
+    .itens-sacola {
+        gap: 16px;
+    }
+}
+
+
+/* ======================================================
+   CELULARES
+====================================================== */
+
+@media (max-width: 640px) {
+    .container,
+    .container-acampa,
+    .container-informacoes,
+    .container-sacola,
+    .container-apadrinhamento {
+        width: min(100% - 32px, var(--largura));
+    }
+
+    .camada-escura {
+        padding: 12px 0;
+    }
+
+    .imagem-campanha {
+        max-height: none;
+        border-radius: 4px;
+    }
+
+    .dados-acampa,
+    .secao-informacoes,
+    .secao-sacola {
+        padding: 44px 0;
+    }
+
+    .conteudo-acampa {
+        padding: 0;
+    }
+
+    .conteudo-acampa .titulo-secao {
+        margin-bottom: 22px;
+    }
+
+    .titulo-secao {
+        margin-bottom: 20px;
+        font-size: 1.55rem;
+    }
+
+    .texto-acampa-paragrafo {
+        margin-bottom: 15px;
+        font-size: 0.96rem;
+        line-height: 1.8;
+    }
+
+    .passos {
+        margin-top: 26px;
+    }
+
+    .passo {
+        gap: 14px;
+        padding: 20px 16px;
+    }
+
+    .numero-passo {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+
+    .passo h3 {
+        font-size: 1rem;
+    }
+
+    .passo p {
+        font-size: 0.9rem;
+    }
+
+    .texto-central {
+        margin-bottom: 22px;
+        font-size: 0.94rem;
+        line-height: 1.75;
+    }
+
+    .itens-sacola {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 26px 0;
+    }
+
+    .item-sacola {
+        min-height: 110px;
+        flex-direction: row;
+        gap: 18px;
+        padding: 18px;
+    }
+
+    .item-sacola span {
+        font-size: 2.2rem;
+    }
+
+    .secao-apadrinhamento {
+        padding: 48px 16px;
+    }
+
+    .container-apadrinhamento h2 {
+        margin-bottom: 24px;
+        font-size: 1.55rem;
+    }
+
+    .btn-escolher {
+        width: 100%;
+        max-width: 340px;
+        padding: 13px 18px;
+        font-size: 0.94rem;
+    }
+
+    .footer-paz-kids {
+        padding: 25px 16px;
+    }
+
+    .footer-titulo {
+        font-size: 0.92rem;
+    }
+
+    .footer-copyright {
+        font-size: 0.76rem;
+    }
+}
+
+
+/* ======================================================
+   ACESSIBILIDADE: REDUZ ANIMAÇÕES SE NECESSÁRIO
+====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

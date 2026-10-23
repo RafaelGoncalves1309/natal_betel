@@ -1,0 +1,760 @@
+
+:root {
+    --vermelho: #b52222;
+    --vermelho-escuro: #8f1717;
+    --vermelho-claro: #fff0f0;
+    --verde: #176b45;
+    --dourado: #d6a738;
+    --creme: #fffaf2;
+    --texto: #333333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: "Montserrat", sans-serif;
+
+    color: var(--texto);
+
+    background:
+        radial-gradient(circle at top left,
+            rgba(214, 167, 56, .15),
+            transparent 30%),
+        radial-gradient(circle at bottom right,
+            rgba(181, 34, 34, .10),
+            transparent 30%),
+        var(--creme);
+}
+
+
+/* ==============================
+   PÁGINA
+============================== */
+
+.pagina-confirmacao {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 35px 20px 50px;
+}
+
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+.cabecalho-confirmacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.logo {
+    width: 105px;
+    height: auto;
+}
+
+.titulo-area {
+    text-align: left;
+}
+
+.selo {
+    font-size: 32px;
+}
+
+.titulo-area h1 {
+    margin: 3px 0 8px;
+
+    color: var(--vermelho);
+
+    font-family: "Berkshire Swash", cursive;
+
+    font-size: 38px;
+    font-weight: 400;
+}
+
+.titulo-area p {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+/* ==============================
+   MENSAGEM
+============================== */
+
+.mensagem-confirmacao {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.mensagem-confirmacao h2 {
+    margin: 0 0 8px;
+
+    color: var(--verde);
+
+    font-family: "Berkshire Swash", cursive;
+
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.mensagem-confirmacao p {
+    margin: 0;
+
+    font-size: 15px;
+}
+
+
+/* ==============================
+   ÁREA DO CARD
+============================== */
+
+.area-card {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ==============================
+   CARD
+============================== */
+
+.card-sacolininha {
+    width: 100%;
+    max-width: 650px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, .14);
+
+    border: 1px solid rgba(181, 34, 34, .12);
+}
+
+
+/* ==============================
+   TOPO DO CARD
+============================== */
+
+.card-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 24px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--vermelho),
+            var(--vermelho-escuro)
+        );
+
+    text-align: center;
+}
+
+.card-topo > div:nth-child(2) {
+    flex: 1;
+}
+
+.decoracao {
+    font-size: 28px;
+    min-width: 45px;
+}
+
+.card-campanha {
+    display: block;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.card-topo h2 {
+    margin: 3px 0;
+
+    font-family: "Berkshire Swash", cursive;
+
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.card-ano {
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* ==============================
+   CONTEÚDO
+============================== */
+
+.card-conteudo {
+    display: flex;
+    gap: 25px;
+
+    padding: 28px;
+}
+
+
+/* ==============================
+   FOTO
+============================== */
+
+.foto-container {
+    flex: 0 0 210px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.foto-container img {
+    width: 210px;
+    height: 210px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    border: 5px solid #ffffff;
+
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, .15);
+}
+
+
+/* ==============================
+   DADOS
+============================== */
+
+.dados-crianca {
+    flex: 1;
+
+    text-align: left;
+}
+
+.rotulo {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #777777;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.dados-crianca h3 {
+    margin: 0;
+
+    color: var(--vermelho);
+
+    font-family: "Berkshire Swash", cursive;
+
+    font-size: 34px;
+    font-weight: 400;
+}
+
+.idade {
+    margin: 2px 0 18px;
+
+    color: #666666;
+
+    font-size: 14px;
+}
+
+
+/* ==============================
+   INFORMAÇÕES
+============================== */
+
+.informacoes {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.informacao {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px;
+
+    background: var(--vermelho-claro);
+
+    border-radius: 10px;
+}
+
+.informacao > span {
+    font-size: 20px;
+}
+
+.informacao small,
+.presente small {
+    display: block;
+
+    color: #777777;
+
+    font-size: 9px;
+}
+
+.informacao strong,
+.presente strong {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 12px;
+
+    color: var(--texto);
+}
+
+
+/* ==============================
+   PRESENTE
+============================== */
+
+.presente {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 12px;
+
+    padding: 11px;
+
+    background: #fff8e8;
+
+    border-radius: 10px;
+
+    border-left: 4px solid var(--dourado);
+}
+
+.presente > span {
+    font-size: 22px;
+}
+
+
+/* ==============================
+   SACOLA
+============================== */
+
+.card-sacola {
+    padding: 0 28px 20px;
+}
+
+.linha-decorativa {
+    width: 100%;
+    height: 1px;
+
+    margin-bottom: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--dourado),
+            transparent
+        );
+}
+
+.card-sacola p {
+    margin: 0 0 12px;
+
+    font-size: 13px;
+}
+
+.itens-sacola {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.itens-sacola span {
+    padding: 7px 10px;
+
+    color: var(--verde);
+
+    background: #eef8f2;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* ==============================
+   ENTREGA
+============================== */
+
+.card-entrega {
+    margin: 0 28px 20px;
+
+    padding: 13px 15px;
+
+    text-align: center;
+
+    background: #f6f6f6;
+
+    border-radius: 12px;
+}
+
+.card-entrega strong {
+    color: var(--vermelho);
+
+    font-size: 12px;
+}
+
+.card-entrega p {
+    margin: 4px 0 0;
+
+    font-size: 11px;
+}
+
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+.card-rodape {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 12px 20px;
+
+    color: #ffffff;
+
+    background: var(--verde);
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+
+/* ==============================
+   BOTÕES
+============================== */
+
+.acoes {
+    display: flex;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.acoes button {
+    min-width: 210px;
+
+    padding: 14px 20px;
+
+    border: 0;
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: transform .2s, box-shadow .2s;
+}
+
+.acoes button:hover {
+    transform: translateY(-2px);
+}
+
+.btn-principal {
+    color: #ffffff;
+
+    background: var(--vermelho);
+
+    box-shadow:
+        0 5px 15px rgba(181, 34, 34, .25);
+}
+
+.btn-secundario {
+    color: var(--verde);
+
+    background: #ffffff;
+
+    border: 2px solid var(--verde) !important;
+}
+
+
+/* ==============================
+   OBSERVAÇÃO
+============================== */
+
+.observacao {
+    max-width: 600px;
+
+    margin: 15px auto 0;
+
+    text-align: center;
+
+    color: #777777;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* ==============================
+   VOLTAR
+============================== */
+
+.voltar {
+    display: block;
+
+    width: fit-content;
+
+    margin: 22px auto 0;
+
+    color: var(--vermelho);
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* ==============================
+   ERRO
+============================== */
+
+.mensagem-erro {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, .65);
+
+    z-index: 1000;
+}
+
+.mensagem-erro::before {
+    content: "";
+
+    position: absolute;
+
+    width: 90%;
+    max-width: 420px;
+
+    padding: 80px;
+
+    background: #ffffff;
+
+    border-radius: 15px;
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 700px) {
+
+    .pagina-confirmacao {
+        padding: 25px 15px 40px;
+    }
+
+    .cabecalho-confirmacao {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 10px;
+    }
+
+    .titulo-area {
+        text-align: center;
+    }
+
+    .titulo-area h1 {
+        font-size: 31px;
+    }
+
+    .logo {
+        width: 90px;
+    }
+
+    .card-conteudo {
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 22px;
+    }
+
+    .foto-container {
+        flex-basis: auto;
+    }
+
+    .foto-container img {
+        width: 190px;
+        height: 190px;
+    }
+
+    .dados-crianca {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .dados-crianca h3 {
+        font-size: 30px;
+    }
+
+    .informacoes {
+        text-align: left;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+
+    .acoes button {
+        width: 100%;
+    }
+
+    .card-rodape {
+        flex-direction: column;
+
+        text-align: center;
+    }
+}
+
+
+/* ==============================
+   IMPRESSÃO
+============================== */
+
+@media print {
+
+    body {
+        background: #ffffff;
+    }
+
+    .pagina-confirmacao {
+        max-width: 100%;
+
+        padding: 0;
+    }
+
+    .cabecalho-confirmacao,
+    .mensagem-confirmacao,
+    .acoes,
+    .observacao,
+    .voltar {
+        display: none !important;
+    }
+
+    .area-card {
+        display: block;
+    }
+
+    .card-sacolininha {
+        max-width: 100%;
+
+        box-shadow: none;
+
+        border: 1px solid #dddddd;
+
+        border-radius: 0;
+    }
+
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+}
+
+
+/* Rodapé Paz Kids em Ação */
+.footer-paz-kids {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 40px;
+    padding: 24px 16px;
+    text-align: center;
+    border-top: 1px solid #e8e8e8;
+    color: #666;
+    font-family: inherit;
+}
+
+.footer-paz-kids p {
+    margin: 6px 0;
+}
+
+.footer-paz-kids .footer-titulo {
+    font-size: 16px;
+    font-weight: 700;
+    color: #444;
+}
+
+.footer-paz-kids .footer-titulo:first-letter {
+    color: #d9534f;
+}
+
+.footer-paz-kids .footer-slogan {
+    font-size: 13px;
+}
+
+.footer-paz-kids .footer-copyright {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #888;
+}
+
+@media (max-width: 480px) {
+    .footer-paz-kids {
+        margin-top: 28px;
+        padding: 20px 12px;
+    }
+}

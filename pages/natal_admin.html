@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração | Paz Kids em Ação</title>
+    <link rel="stylesheet" href="../css/natal_admin.css">
+</head>
+<body>
+    <header class="topo">
+        <div class="topo-conteudo">
+            <div class="identidade">
+                <span class="marca">PAZ KIDS EM AÇÃO</span>
+                <span class="submarca">Natal 2026 · Administração</span>
+            </div>
+            <button id="btn-sair"
+                    class="btn btn-secundario btn-sair"
+                    type="button"
+                    hidden>
+                Sair
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="tela-login" class="login-area">
+            <div class="login-card">
+                <div class="icone-login" aria-hidden="true">✦</div>
+                <p class="sobretitulo">ÁREA RESTRITA</p>
+                <h1>Painel administrativo</h1>
+                <p class="texto-suave">
+                    Entre com o usuário já cadastrado no Supabase
+                    para gerenciar os apadrinhamentos e as entregas.
+                </p>
+
+                <form id="form-login">
+                    <label for="email-login">E-mail</label>
+                    <input
+                        id="email-login"
+                        name="email"
+                        type="email"
+                        autocomplete="username"
+                        required
+                    >
+
+                    <label for="senha-login">Senha</label>
+                    <input
+                        id="senha-login"
+                        name="password"
+                        type="password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        id="btn-entrar"
+                        class="btn btn-principal btn-largo"
+                        type="submit">
+                        Entrar no painel
+                    </button>
+
+                    <p
+                        id="erro-login"
+                        class="mensagem mensagem-erro"
+                        role="alert"
+                        hidden>
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <section id="tela-painel" hidden>
+            <div class="cabecalho-pagina">
+                <div>
+                    <p class="sobretitulo">ACOMPANHAMENTO DA CAMPANHA</p>
+                    <h1>Visão geral</h1>
+                    <p class="texto-suave">
+                        Acompanhe os apadrinhamentos, o recebimento
+                        e a conferência das sacolinhas de Natal.
+                    </p>
+                </div>
+
+                <button
+                    id="btn-atualizar"
+                    class="btn btn-secundario"
+                    type="button">
+                    ↻ Atualizar dados
+                </button>
+            </div>
+
+            <div
+                id="mensagem-painel"
+                class="mensagem"
+                role="status"
+                aria-live="polite"
+                hidden>
+            </div>
+
+            <section
+                class="indicadores"
+                aria-label="Indicadores da campanha">
+
+                <article class="indicador">
+                    <span class="indicador-icone">♧</span>
+                    <span class="indicador-label">Total de crianças</span>
+                    <strong id="total-criancas">—</strong>
+                </article>
+
+                <article class="indicador">
+                    <span class="indicador-icone verde">♡</span>
+                    <span class="indicador-label">Disponíveis</span>
+                    <strong id="total-livres">—</strong>
+                </article>
+
+                <article class="indicador">
+                    <span class="indicador-icone dourado">♥</span>
+                    <span class="indicador-label">Apadrinhadas</span>
+                    <strong id="total-apadrinhadas">—</strong>
+                </article>
+
+                <article class="indicador">
+                    <span class="indicador-icone azul">▣</span>
+                    <span class="indicador-label">Aguardando entrega</span>
+                    <strong id="total-pendentes">—</strong>
+                </article>
+
+                <article class="indicador">
+                    <span class="indicador-icone azul">📦</span>
+                    <span class="indicador-label">Entregues (em conferência)</span>
+                    <strong id="total-entregues">—</strong>
+                </article>
+
+                <article class="indicador">
+                    <span class="indicador-icone coral">!</span>
+                    <span class="indicador-label">Com pendências</span>
+                    <strong id="total-com-pendencias">—</strong>
+                </article>
+
+                <article class="indicador">
+                    <span class="indicador-icone verde">✓</span>
+                    <span class="indicador-label">Conferidas / OK</span>
+                    <strong id="total-concluidas">—</strong>
+                </article>
+            </section>
+
+            <section class="lista-card">
+                <div class="lista-cabecalho">
+                    <div>
+                        <h2>Controle das crianças</h2>
+                        <p class="texto-suave">
+                            Atualize o status da sacolinha, registre
+                            pendências e salve cada alteração.
+                        </p>
+                    </div>
+
+                    <span id="quantidade-registros" class="contador">
+                        0 registros
+                    </span>
+                </div>
+
+                <div class="filtros">
+                    <div class="campo-pesquisa">
+                        <label class="sr-only" for="pesquisa">
+                            Pesquisar criança ou padrinho
+                        </label>
+                        <span aria-hidden="true">⌕</span>
+                        <input
+                            id="pesquisa"
+                            type="search"
+                            placeholder="Buscar criança, padrinho, telefone ou campus..."
+                        >
+                    </div>
+
+                    <div class="campo-filtro">
+                        <label for="filtro-status">Status da entrega</label>
+                        <select id="filtro-status">
+                            <option value="todos">Todos os status</option>
+                            <option value="Pendente">Pendente</option>
+                            <option value="Entregue">Entregue</option>
+                            <option value="Com pendências">Com pendências</option>
+                            <option value="Conferido / OK">Conferido / OK</option>
+                            <option value="sem-status">Sem status definido</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-filtro">
+                        <label for="filtro-adocao">Apadrinhamento</label>
+                        <select id="filtro-adocao">
+                            <option value="todos">Todas as crianças</option>
+                            <option value="adotada">Apadrinhadas</option>
+                            <option value="livre">Disponíveis</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="tabela-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Criança</th>
+                                <th>Padrinho / contato</th>
+                                <th>Campus</th>
+                                <th>Data do apadrinhamento</th>
+                                <th>Status da entrega</th>
+                                <th>Data de recebimento</th>
+                                <th>Observações / pendências</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="corpo-tabela">
+                            <tr>
+                                <td colspan="8" class="estado-vazio">
+                                    Entre no painel para carregar os registros.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="nota-tabela">
+                    A data de recebimento é registrada na primeira mudança
+                    de “Pendente” para outro status e preservada nas
+                    atualizações posteriores. “Entregue” indica que a
+                    sacolinha foi recebida e ainda está em conferência.
+                    “Com pendências” indica que falta algum item ou há
+                    algo a resolver. “Conferido / OK” indica que a
+                    sacolinha foi conferida e está completa.
+                </p>
+            </section>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        Paz Kids em Ação · Natal 2026
+    </footer>
+
+    <script type="module" src="../js/natal_admin.js"></script>
+</body>
+
+
+
+
+</html>

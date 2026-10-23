@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Natal Solidário: Multiplicando o Amor. Escolha uma criança da Casa de Paz Betel 3 para presentear neste Natal.">
+
+    <meta name="theme-color" content="#173D32">
+
+    <title>Escolha uma Criança | Natal Solidário</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/natal26.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="secao-principal">
+
+        <div class="camada-escura">
+
+            <div class="container conteudo-principal">
+
+                <img
+                    src="/images/natal.jpg"
+                    alt="Natal Solidário: Multiplicando o Amor. O amor é a única coisa que cresce à medida que se reparte."
+                    id="logo">
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+    
+
+
+        <!-- GRID DE CRIANÇAS -->
+
+        <section class="area-criancas">
+
+            <div class="container-criancas">
+
+                <h2 class="titulo-lista">
+                    Escolha quem você vai presentear
+                </h2>
+
+                <p class="subtitulo-criancas">
+                    Conheça as crianças participantes e clique em uma delas
+                    para saber mais.
+                </p>
+
+                <div
+                    id="grid-criancas"
+                    class="grid-criancas">
+
+                    <p class="mensagem-carregando">
+                        Preparando nossa lista de crianças...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MODAL DA CRIANÇA -->
+
+        <div
+            id="modal-crianca"
+            class="modal-crianca"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-nome"
+            aria-hidden="true">
+
+            <div class="conteudo-modal">
+
+                <button
+                    id="fechar-modal"
+                    class="fechar-modal"
+                    type="button"
+                    aria-label="Fechar">
+
+                    &times;
+
+                </button>
+
+                <div class="detalhe-foto-container">
+
+                    <img
+                        id="modal-foto"
+                        class="modal-foto"
+                        src=""
+                        alt="">
+
+                </div>
+
+                <span class="etiqueta-modal">
+                    🎁 Uma criança, um presente, muito amor
+                </span>
+
+                <h2 id="modal-nome">
+                    Nome da criança
+                </h2>
+
+                <p id="modal-idade">
+                    Idade
+                </p>
+
+                <div class="apresentacao-crianca">
+
+                    <p id="modal-apresentacao"></p>
+
+                </div>
+
+                <button
+                    id="modal-apadrinhar"
+                    class="btn-modal-apadrinhar"
+                    type="button">
+
+                    ♥ Quero presentear esta criança
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- MODAL DO FORMULÁRIO -->
+
+        <div
+            id="modal-formulario"
+            class="modal-crianca"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="titulo-formulario"
+            aria-hidden="true">
+
+            <div class="conteudo-modal conteudo-modal-formulario">
+
+                <button
+                    id="fechar-modal-formulario"
+                    class="fechar-modal"
+                    type="button"
+                    aria-label="Fechar">
+
+                    &times;
+
+                </button>
+
+                <div class="cabecalho-formulario">
+
+                    <span class="icone-formulario" aria-hidden="true">
+                        🎄
+                    </span>
+
+                    <h2 id="titulo-formulario">
+                        Seu carinho faz a diferença!
+                    </h2>
+
+                    <p>
+                        Falta pouco para você fazer parte dessa história.
+                    </p>
+
+                </div>
+
+
+                <!-- CRIANÇA ESCOLHIDA -->
+
+                <div class="crianca-escolhida">
+
+                    <img
+                        id="form-foto-crianca"
+                        src=""
+                        alt="">
+
+                    <div>
+
+                        <strong id="form-nome-crianca">
+                            Criança escolhida
+                        </strong>
+
+                        <span id="form-idade-crianca">
+                            Idade
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ORIENTAÇÃO -->
+
+                <p class="texto-apoio">
+                    Preencha seus dados para confirmar sua participação
+                    na campanha Natal Solidário.
+                </p>
+
+                <hr>
+
+
+                <!-- DADOS DO PADRINHO -->
+
+                <label for="nome">Nome completo</label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Digite seu nome completo"
+                    autocomplete="name">
+
+                <label for="telefone">Telefone / WhatsApp</label>
+
+                <input
+                    type="text"
+                    id="telefone"
+                    placeholder="Digite seu telefone"
+                    autocomplete="tel"
+                    inputmode="tel">
+
+                <label for="email">E-mail <span>(opcional)</span></label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu e-mail"
+                    autocomplete="email">
+
+               <label for="campus">Nome do seu Life Group</label>
+
+                <input
+                    type="text"
+                    id="campus"
+                    name="campus"
+                    placeholder="Ex: Life Group Betel"
+                    required
+                >
+
+
+                <!-- CONFIRMAÇÃO -->
+
+                <button
+                    id="btn-apadrinhar"
+                    class="btn-apadrinhar"
+                    type="button">
+
+                    ♥ Confirmar participação
+
+                </button>
+
+                <p class="nota-formulario">
+                    Obrigado por compartilhar o amor neste Natal!
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer class="footer-paz-kids">
+
+        <p class="footer-titulo">
+            ♥ Natal Solidário: Multiplicando o Amor
+        </p>
+
+        <p class="footer-slogan">
+            O amor é a única coisa que cresce à medida que se reparte.
+        </p>
+
+        <p class="footer-copyright">
+            © 2026 Natal Solidário: Multiplicando o Amor.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script
+        type="module"
+        src="/js/natal26.js">
+    </script>
+
+</body>
+
+</html>

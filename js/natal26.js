@@ -379,13 +379,27 @@ async function salvarApadrinhamento() {
             await carregarCriancas();
             return;
         }
+       
 
-        alert(
-            "Apadrinhamento registrado com sucesso! Muito obrigado por multiplicar o amor. ❤️"
+        sessionStorage.setItem(
+        "confirmacaoApadrinhamento",
+        JSON.stringify({
+            nome: crianca.nome,
+            idade: crianca.idade,
+            camiseta: crianca.camiseta,
+            calca: crianca.calca,
+            sapato: crianca.sapato,
+            hobby: crianca.hobby,
+            nomePadrinho: nomePadrinho,
+            lifePadrinho: lifePadrinho
+        })
         );
 
-        fecharModalFormulario();
-        await carregarCriancas();
+window.location.href = "/pages/confirmacao.html";
+return;
+
+window.location.href = "/pages/confirmacao.html";
+return;
 
     } catch (erro) {
         console.error("Erro ao salvar apadrinhamento:", erro);

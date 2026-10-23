@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprovante de Apadrinhamento | Natal Solidário</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 14px;
+      background: #f5f3eb;
+      color: #26352b;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .pagina {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .comprovante {
+      background: #fff;
+      border: 2px solid #d7b65d;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 5px 22px rgba(0, 0, 0, 0.08);
+    }
+
+    .cabecalho {
+      text-align: center;
+      border-bottom: 2px solid #e9dfbd;
+      padding-bottom: 22px;
+      margin-bottom: 24px;
+    }
+
+    .simbolo {
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      color: #245b3d;
+      font-size: 27px;
+      margin: 0 0 8px;
+    }
+
+    .subtitulo {
+      color: #987526;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .mensagem {
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .secao-titulo {
+      color: #245b3d;
+      font-size: 17px;
+      border-bottom: 1px solid #e7e7df;
+      padding-bottom: 9px;
+      margin: 24px 0 14px;
+    }
+
+    .dado {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 11px 0;
+      border-bottom: 1px solid #f0f0eb;
+    }
+
+    .dado span {
+      color: #62685f;
+    }
+
+    .dado strong {
+      text-align: right;
+      overflow-wrap: anywhere;
+    }
+
+    .presente {
+      background: #f1f6ed;
+      border: 1px solid #dce9d4;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 18px;
+    }
+
+    .presente strong {
+      display: block;
+      color: #245b3d;
+      margin-bottom: 7px;
+    }
+
+    .rodape {
+      text-align: center;
+      line-height: 1.6;
+      color: #596258;
+      margin-top: 28px;
+      font-size: 14px;
+    }
+
+    .acoes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 22px auto;
+    }
+
+    .botao {
+      border: 0;
+      border-radius: 8px;
+      padding: 13px 20px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .botao-principal {
+      background: #245b3d;
+      color: #fff;
+    }
+
+    .botao-secundario {
+      background: #e5e8df;
+      color: #26352b;
+    }
+
+    .aviso {
+      text-align: center;
+      color: #62685f;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 12px 8px;
+      }
+
+      .comprovante {
+        padding: 22px 17px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      .dado {
+        gap: 10px;
+        font-size: 14px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm;
+      }
+
+      body {
+        padding: 0;
+        background: #fff;
+      }
+
+      .pagina {
+        max-width: none;
+      }
+
+      .comprovante {
+        box-shadow: none;
+        border: 2px solid #d7b65d;
+        padding: 22px;
+      }
+
+      .acoes,
+      .aviso {
+        display: none !important;
+      }
+
+      .dado,
+      .presente {
+        break-inside: avoid;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="pagina">
+    <section class="comprovante">
+      <header class="cabecalho">
+        <div class="simbolo">🎄❤️</div>
+        <h1>Natal Solidário</h1>
+        <div class="subtitulo">Multiplicando o Amor</div>
+      </header>
+
+      <div class="mensagem">
+        <strong>Apadrinhamento registrado!</strong>
+        <p>
+          Obrigado por fazer parte desta campanha.
+          Guarde este comprovante para consultar as informações
+          da criança na hora de preparar o presente.
+        </p>
+      </div>
+
+      <h2 class="secao-titulo">👧 Informações da criança</h2>
+
+      <div class="dado">
+        <span>Nome</span>
+        <strong id="nome-crianca">Não informado</strong>
+      </div>
+
+      <div class="dado">
+        <span>Idade</span>
+        <strong id="idade-crianca">Não informada</strong>
+      </div>
+
+      <h2 class="secao-titulo">🎁 Tamanhos e medidas</h2>
+
+      <div class="dado">
+        <span>👕 Camiseta</span>
+        <strong id="camiseta">Não informado</strong>
+      </div>
+
+      <div class="dado">
+        <span>👖 Calça</span>
+        <strong id="calca">Não informado</strong>
+      </div>
+
+      <div class="dado">
+        <span>👟 Calçado</span>
+        <strong id="sapato">Não informado</strong>
+      </div>
+
+      <div class="presente">
+        <strong>🧸 Brinquedo, presente ou interesse</strong>
+        <span id="hobby">Não informado</span>
+      </div>
+
+      <h2 class="secao-titulo">💚 Dados do padrinho</h2>
+
+      <div class="dado">
+        <span>Nome</span>
+        <strong id="nome-padrinho">Não informado</strong>
+      </div>
+
+      <div class="dado">
+        <span>Life Group</span>
+        <strong id="life-padrinho">Não informado</strong>
+      </div>
+
+      <footer class="rodape">
+        <strong>Obrigado por multiplicar o amor!</strong>
+        <p>Que este gesto torne o Natal de uma criança ainda mais especial. ❤️</p>
+      </footer>
+    </section>
+
+    <div class="acoes">
+      <button class="botao botao-principal" onclick="window.print()">
+        🖨️ Imprimir / Salvar PDF
+      </button>
+
+      <button class="botao botao-secundario" onclick="window.location.href='/pages/natal26.html'">
+        Voltar às crianças
+      </button>
+    </div>
+
+    <p class="aviso">
+      Para baixar o PDF, clique em “Imprimir / Salvar PDF” e escolha
+      “Salvar como PDF” como destino da impressão.
+    </p>
+  </main>
+
+  <script>
+    const chave = "confirmacaoApadrinhamento";
+    const dadosSalvos = sessionStorage.getItem(chave);
+
+    if (!dadosSalvos) {
+      document.querySelector(".mensagem").innerHTML =
+        "<strong>Comprovante indisponível</strong><p>Os dados desta confirmação não estão mais disponíveis nesta sessão. Se necessário, entre em contato com a equipe da campanha.</p>";
+
+      document.querySelector(".acoes").style.display = "none";
+    } else {
+      try {
+        const dados = JSON.parse(dadosSalvos);
+
+        const campos = {
+          "nome-crianca": dados.nome,
+          "idade-crianca": dados.idade ? dados.idade + " anos" : "",
+          "camiseta": dados.camiseta,
+          "calca": dados.calca,
+          "sapato": dados.sapato,
+          "hobby": dados.hobby,
+          "nome-padrinho": dados.nomePadrinho,
+          "life-padrinho": dados.lifePadrinho
+        };
+
+        Object.entries(campos).forEach(([id, valor]) => {
+          document.getElementById(id).textContent =
+            valor || "Não informado";
+        });
+      } catch (erro) {
+        console.error("Erro ao carregar comprovante:", erro);
+        document.querySelector(".mensagem").textContent =
+          "Não foi possível carregar os dados do comprovante.";
+        document.querySelector(".acoes").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
